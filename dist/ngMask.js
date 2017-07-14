@@ -139,6 +139,7 @@
                   if(value !== viewValueWithDivisors){
                     controller.$setViewValue(angular.copy(viewValueWithDivisors), 'input');
                     controller.$render();
+                    setSelectionRange(viewValueWithDivisors.length);  //Necessary for Android Chrome that is maintaining original cursor position when the value was without divisors.
                   }
                 } catch (e) {
                   $log.error('[mask - parseViewValue]');
